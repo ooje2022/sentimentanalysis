@@ -57,12 +57,22 @@ param={
 bst = xgb.train(param, train_data)
 
 
+##Inference code
 y_pred=bst.predict(validation_data)
 
 y_pred[y_pred>=0.5]=1
 y_pred[y_pred<0.5]=0
 
 print(accuracy_score(y_test,y_pred))
+
+joblib.dump(vectorizer_keyword,'vectorizer_keyword.pkl')
+
+joblib.dump(vectorizer_location,'vectorizer_location.pkl')
+
+joblib.dump(tfidf_vectorizer,'tfidf_vectorizer.pkl')
+
+joblib.dump(bst,'model.pkl')
+
 
 joblib.dump(vectorizer_keyword,'vectorizer_keyword.pkl')
 

@@ -7,10 +7,10 @@ from scipy.sparse import hstack
 import joblib
 
 # Loading the pickle files
-vectorizer_keyword=joblib.load('./artifacts/vectorizer_keyword.pkl')
-vectorizer_location=joblib.load('./artifacts/vectorizer_location.pkl')
-tfidf_vectorizer=joblib.load('./artifacts/tfidf_vectorizer.pkl')
-bst=joblib.load('./artifacts/model.pkl')
+vectorizer_keyword=joblib.load('vectorizer_keyword.pkl')
+vectorizer_location=joblib.load('vectorizer_location.pkl')
+tfidf_vectorizer=joblib.load('tfidf_vectorizer.pkl')
+bst=joblib.load('model.pkl')
 
 # Initiating Flask app
 from flask import Flask,render_template,request,url_for
